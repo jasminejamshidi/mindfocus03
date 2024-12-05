@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfocus</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mindfocus</h1>
+        <p class="subtitle">Smart Reminders for Better Focus</p>
+        <div class="notification-box">
+            <button id="enableBtn" class="btn">Enable Notifications</button>
+            <div class="volume-meter-container">
+                <div class="volume-meter">
+                    <div class="volume-bar"></div>
+                </div>
+                <div class="volume-label">Sound Level</div>
+            </div>
+            <div class="reminder-toggles">
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="waterToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Water Reminder</span>
+                </div>
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="keysToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Keys Reminder</span>
+                </div>
+            </div>
+            <div class="manual-reminder-section">
+                <div class="section-header">
+                    <h3>Manual Reminders</h3>
+                    <div class="section-actions">
+                        <button class="action-btn delete-all-btn" title="Delete All Reminders">
+                            <span class="icon">🗑️</span>
+                        </button>
+                        <button class="action-btn add-reminder-btn" title="Add New Reminder">
+                            <span class="icon">➕</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="quick-reminders">
+                    <button class="quick-reminder-btn" data-title="Vitamin Reminder" data-message="Time to take your vitamins!">
+                        <span class="icon">💊</span>
+                        <span>Vitamin</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Walking Break" data-message="Time for a quick walk!">
+                        <span class="icon">🚶</span>
+                        <span>Walking</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Laundry Reminder" data-message="Time to do the laundry!">
+                        <span class="icon">🧺</span>
+                        <span>Laundry</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Stretch Break" data-message="Time to stretch!">
+                        <span class="icon">🧘</span>
+                        <span>Stretch</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Meditation Time" data-message="Take a moment to meditate">
+                        <span class="icon">🧘‍♂️</span>
+                        <span>Meditate</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Eye Rest" data-message="Give your eyes a break from the screen">
+                        <span class="icon">👁️</span>
+                        <span>Eye Rest</span>
+                    </button>
+                </div>
+                <div class="reminder-form">
+                    <input type="text" id="reminderTitle" placeholder="Reminder Title">
+                    <textarea id="reminderMessage" placeholder="Reminder Message"></textarea>
+                    <div class="reminder-time">
+                        <input type="time" id="reminderTime">
+                        <select id="reminderRepeat">
+                            <option value="once">Once</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                        </select>
+                    </div>
+                    <button id="addReminderBtn" class="btn reminder-btn">Add Reminder</button>
+                </div>
+                <div id="remindersList" class="reminders-list">
+                    <!-- Reminders will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+        <div id="status" class="status"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 

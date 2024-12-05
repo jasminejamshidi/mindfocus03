@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:3000/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Mindfocus web_files/___vscode_livepreview_injected_script"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfocus</title>
+    <link rel="stylesheet" href="./Mindfocus web_files/styles.css">
+    <script src="./Mindfocus web_files/tf.min.js"></script>
+    <script src="./Mindfocus web_files/speech-commands.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mindfocus</h1>
+        <p class="subtitle">Smart Reminders for Better Focus</p>
+        <div class="notification-box">
+            <button id="enableBtn" class="btn" style="display: none;">Enable Notifications</button>
+            <div class="volume-meter-container">
+                <div class="volume-meter">
+                    <div class="volume-bar" style="width: 8%;"></div>
+                </div>
+                <div class="volume-label">Sound Level</div>
+            </div>
+            <div class="reminder-toggles">
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="waterToggle" checked="">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Water Reminder</span>
+                </div>
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="keysToggle" checked="">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Keys Reminder</span>
+                </div>
+            </div>
+            <div class="manual-reminder-section">
+                <div class="section-header">
+                    <h3>Manual Reminders</h3>
+                    <div class="section-actions">
+                        <button class="action-btn delete-all-btn" title="Delete All Reminders">
+                            <span class="icon">🗑️</span>
+                        </button>
+                        <button class="action-btn add-reminder-btn" title="Add New Reminder">
+                            <span class="icon">➕</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="quick-reminders">
+                    <button class="quick-reminder-btn" data-title="Vitamin Reminder" data-message="Time to take your vitamins!">
+                        <span class="icon">💊</span>
+                        <span>Vitamin</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Walking Break" data-message="Time for a quick walk!">
+                        <span class="icon">🚶</span>
+                        <span>Walking</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Laundry Reminder" data-message="Time to do the laundry!">
+                        <span class="icon">🧺</span>
+                        <span>Laundry</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Stretch Break" data-message="Time to stretch!">
+                        <span class="icon">🧘</span>
+                        <span>Stretch</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Meditation Time" data-message="Take a moment to meditate">
+                        <span class="icon">🧘‍♂️</span>
+                        <span>Meditate</span>
+                    </button>
+                    <button class="quick-reminder-btn" data-title="Eye Rest" data-message="Give your eyes a break from the screen">
+                        <span class="icon">👁️</span>
+                        <span>Eye Rest</span>
+                    </button>
+                </div>
+                <div class="reminder-form">
+                    <input type="text" id="reminderTitle" placeholder="Reminder Title">
+                    <textarea id="reminderMessage" placeholder="Reminder Message"></textarea>
+                    <div class="reminder-time">
+                        <input type="time" id="reminderTime">
+                        <select id="reminderRepeat">
+                            <option value="once">Once</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                        </select>
+                    </div>
+                    <button id="addReminderBtn" class="btn reminder-btn">Add Reminder</button>
+                </div>
+                <div id="remindersList" class="reminders-list"></div>
+            </div>
+        </div>
+        <div id="status" class="status success">Keys reminder sent!</div>
+    </div>
+    <script src="./Mindfocus web_files/app.js"></script>
+
+ <div id="notification-container"><div class="in-app-notification keys notification-enter">
+            <div class="notification-header">
+                <div class="notification-title">
+                    <span class="notification-icon">🔑</span>
+                    <h4>Keys Reminder</h4>
+                    <span class="notification-time">12:55 PM</span>
+                </div>
+                <button class="close-btn">×</button>
+            </div>
+            <p>Don't forget your keys!</p>
+        </div></div></body></html>
